@@ -1,0 +1,330 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.navbar-hidden {
+    transform: translateY(-100%);
+}
+
+.logo-transition {
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+.navbar-transition {
+    transition: transform 0.3s ease;
+}
+
+/* Smooth transitions for sidebar */
+#mobileSidebar {
+    transition: transform 0.3s ease-in-out;
+}
+
+#mobileSidebar.open {
+    transform: translateX(0);
+}
+
+/* Overlay fade in/out */
+#sidebarOverlay {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.vegetablesSlider .slick-track {
+  margin-left: 0 !important;
+}
+
+#sidebarOverlay.show {
+    display: block;
+    opacity: 1;
+}
+
+/* Prevent body scroll when sidebar is open */
+body.sidebar-open {
+    overflow: hidden;
+}
+
+/* Smooth appearance for search bar */
+#searchBar {
+    animation: slideDown 0.3s ease-in-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile menu links animation */
+#mobileSidebar nav a {
+    opacity: 0;
+    animation: fadeInSlide 0.3s ease-in-out forwards;
+}
+
+#mobileSidebar.open nav a:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+#mobileSidebar.open nav a:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+#mobileSidebar.open nav a:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+#mobileSidebar.open nav a:nth-child(4) {
+    animation-delay: 0.25s;
+}
+
+#mobileSidebar.open nav a:nth-child(5) {
+    animation-delay: 0.3s;
+}
+
+#mobileSidebar.open nav a:nth-child(6) {
+    animation-delay: 0.35s;
+}
+
+#mobileSidebar.open nav a:nth-child(7) {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ========== ⭐ NEW: CART SIDEBAR STYLES ========== */
+
+/* Cart sidebar smooth slide from right */
+#cartSidebar {
+    transition: transform 0.3s ease-in-out;
+}
+
+#cartSidebar.open {
+    transform: translateX(0);
+}
+
+/* Cart overlay fade in/out */
+#cartOverlay {
+    transition: opacity 0.3s ease-in-out;
+}
+
+#cartOverlay.show {
+    display: block;
+    opacity: 1;
+}
+
+/* Cart items animation */
+.cart-item {
+    opacity: 0;
+    animation: fadeInUp 0.3s ease-in-out forwards;
+}
+
+#cartSidebar.open .cart-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+#cartSidebar.open .cart-item:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+#cartSidebar.open .cart-item:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+#cartSidebar.open .cart-item:nth-child(4) {
+    animation-delay: 0.25s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Custom scrollbar for cart items */
+#cartItems::-webkit-scrollbar {
+    width: 6px;
+}
+
+#cartItems::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+#cartItems::-webkit-scrollbar-thumb {
+    background: #fc8934;
+    border-radius: 10px;
+}
+
+#cartItems::-webkit-scrollbar-thumb:hover {
+    background: #e07a2d;
+}
+
+/* Prevent body scroll when cart is open */
+body.cart-open {
+    overflow: hidden;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    #cartSidebar {
+        width: 100%;
+    }
+}
+
+/* News update slider */
+
+/* Custom Arrow Styling */
+.slick-prev,
+.slick-next {
+    width: 50px;
+    height: 50px;
+    z-index: 10;
+    background: #f10808;
+    /* Your primary color */
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    top: 50%;
+    /* Center vertically */
+    transform: translateY(-50%);
+    /* Adjust for true centering */
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+    background: #c10606;
+    /* Darker shade on hover */
+}
+
+.slick-prev {
+    left: 20px;
+}
+
+.slick-next {
+    right: 20px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 20px;
+    color: white;
+    opacity: 1;
+}
+
+.slick-prev:before {
+    content: "\f053";
+    /* Left arrow icon */
+}
+
+.slick-next:before {
+    content: "\f054";
+    /* Right arrow icon */
+}
+
+/* Dots Styling - Centered and using primary color */
+.slick-dots {
+    bottom: 25px;
+    text-align: center;
+    /* Ensure dots are centered */
+    width: 100%;
+    /* Full width for centering */
+}
+
+.slick-dots li button:before {
+    font-size: 12px;
+    color: white;
+    opacity: 0.5;
+}
+
+.slick-dots li.slick-active button:before {
+    opacity: 1;
+    color: #f10808;
+    /* Your primary color */
+}
+
+/* Mobile responsive arrows */
+@media (max-width: 768px) {
+
+    .slick-prev,
+    .slick-next {
+        width: 40px;
+        height: 40px;
+    }
+
+    .slick-prev {
+        left: 10px;
+    }
+
+    .slick-next {
+        right: 10px;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+        font-size: 16px;
+    }
+}
+
+/* Vegetables sliders customaiztion */
+.vegetablesSlider .slick-dots {
+    bottom: -10px !important;
+    /* Lower the dots position - adjust this value as needed */
+    position: relative;
+    /* Change from absolute to relative for better control */
+    margin-top: 10px;
+    /* Add spacing from slider content */
+}
+
+/* Individual Dot Styling */
+.vegetablesSlider .slick-dots li {
+    margin: 0 6px;
+    /* Spacing between dots */
+}
+
+.vegetablesSlider .slick-dots li button:before {
+    font-size: 12px !important;
+    /* Dot size */
+    color: #d1d5db !important;
+    /* Inactive dot color (gray-300) */
+    opacity: 1 !important;
+    transition: all 0.3s ease;
+}
+
+/* Active Dot Styling */
+.vegetablesSlider .slick-dots li.slick-active button:before {
+    color: #ef4444 !important;
+    /* Active dot color (matches your primary red) */
+    font-size: 14px !important;
+    /* Slightly larger when active */
+    opacity: 1 !important;
+}
+
+/* Hover Effect */
+.vegetablesSlider .slick-dots li button:hover:before {
+    color: #f87171 !important;
+    /* Lighter red on hover */
+    transform: scale(1.2);
+}
+
